@@ -1,4 +1,4 @@
-class slider_horizontal {
+class Slider_ {
 
     constructor(count_img_in_list_, img_3_block_id_, part_id_one_img_, speed_load_, size_one_image_, timer_change_,horizontal_bool_) {
         this.count_img_in_list = count_img_in_list_;
