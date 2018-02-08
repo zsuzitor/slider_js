@@ -1,5 +1,5 @@
 
-div.Index_main_slider_prev_but_v{
+div.main_slider_prev_but_v{
     position:relative;
     width:9%;
 }
@@ -8,25 +8,25 @@ div.div_inline_block {
     display: inline-block;
     vertical-align: top;
 }
-div.Index_main_slider_prev_button{
+div.main_slider_prev_button{
     cursor:pointer;
      height:300px;
     
     background-image: url(prev_button_left.png);
     background-size: 100% 100%;
 }
-div.Index_main_slider_next_but_v{
+div.main_slider_next_but_v{
     position:relative;
     width:9%;
 }
-div.Index_main_slider_next_button{
+div.main_slider_next_button{
     cursor:pointer;
      height:300px;
    
     background-image: url(next_button_right.png);
     background-size: 100% 100%;
 }
-div.Index_main_slider_one_view_block{
+div.main_slider_one_view_block{
     position:relative;
     height:300px;
    width:100%;
@@ -38,7 +38,7 @@ img {
     width: 100%;
     height: 100%;
 }
-div.Index_block_type_1{
+div.block_type_1{
     height:300px;
     
      overflow: hidden;
@@ -55,7 +55,7 @@ div.main_div{
 position:relative;
 }
 
-#Index_main_slider_3_view_block_id{
+#main_slider_3_view_block_id{
      position:relative;
     height:300px;
     width:300%;

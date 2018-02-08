@@ -1,0 +1,54 @@
+
+div.main_slider_prev_but_v{
+    position:relative;
+    width:200px;
+}
+ 
+div.div_inline_block {
+    display: inline-block;
+    vertical-align: top;
+}
+div.main_slider_prev_button{
+    cursor:pointer;
+     height:20px;
+    
+    background-image: url(prev_button_up.png);
+    background-size: 100% 100%;
+}
+div.main_slider_next_but_v{
+    position:relative;
+     width:200px;
+}
+div.main_slider_next_button{
+    cursor:pointer;
+     height:20px;
+   
+    background-image: url(next_button_down.png);
+    background-size: 100% 100%;
+}
+div.main_slider_one_view_block{
+    position:relative;
+   
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+div.block_type_1{
+    width:200px;
+     overflow: hidden;
+      position:relative;     
+}
+div.div_display_none{
+    display: none;
+    position:relative;
+}
+div.main_div{
+position:relative;
+}
+
+#main_slider_3_view_block_id{
+     position:relative;
+    height:300%;
+    top: 0;
+}
