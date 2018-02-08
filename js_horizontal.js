@@ -21,7 +21,7 @@ function up_slider() {
     //5- ширина 1 слайда
     //6- интервал смены слайда (1000==1s)
 	//7- тип слайдера true-горизонтальный false-вертикальный
-    slider = new Slider_(count_img_in_list__, "main_slider_3_view_block_id", "main_slider_one_slide_id", 1000, width, 0,true);
+    slider = new Slider_(count_img_in_list__, "main_slider_3_view_block_id", "main_slider_one_slide_id", 1000, width, 0,true,"slider");
     slider.reload();
 }
 

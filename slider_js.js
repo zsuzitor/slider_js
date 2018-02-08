@@ -1,12 +1,14 @@
 class Slider_ {
 
-    constructor(count_img_in_list_, img_3_block_id_, part_id_one_img_, speed_load_, size_one_image_, timer_change_,horizontal_bool_) {
+    constructor(count_img_in_list_, img_3_block_id_, part_id_one_img_, speed_load_, size_one_image_, timer_change_,horizontal_bool_,object_name_) {
         this.count_img_in_list = count_img_in_list_;
         this.img_3_block_id = img_3_block_id_;
         this.part_id_one_img = part_id_one_img_;
         this.speed_load = speed_load_;
         this.size_one_image = size_one_image_;
         this.horizontal_bool=horizontal_bool_;
+		this.object_name=object_name_;
+		
 		
         this.current_num_img = 0;
         this.activated_slider = false;
@@ -99,20 +101,58 @@ else{
         slider.load_sl();
         slider.activated_slider = false;
 
+		//добавление кнопок перехода
+var str="<div id='test_id' class='test'>"
+for(var i=0;i<slider.count_img_in_list;++i){
+	//
+	var tmp="<div  class='test_block div_inline_block' onclick='"+slider.object_name+".num_slide";
+	
+	tmp+="("+i+")'";
+	tmp+=">";
+	if(i==slider.current_num_img){
+	tmp+="<div class='test_block12'></div>";	
+	}
+	tmp+="</div>";
+	str+=tmp;
+}
+str+="</div>";
 
+div_.innerHTML+=str;
+var but =document.getElementById("test_id");
+but.style.top='0px';
+but.style.left=slider.size_one_image+20 +'px';
+//добавление кнопок перехода: влево вправо
+str="<div id='tttt_id'>";
+str+="<div class='tttt'>";
+str+="<div class='hhhhhh div_inline_block' onclick='"+slider.object_name+".prev()'></div>";
 
+str+="<div class='hhhhhh1 div_inline_block' onclick='"+slider.object_name+".next()'></div>";
+
+//str+=">";
+
+str+="</div></div>";
+
+div_.innerHTML+=str;
+but =document.getElementById("tttt_id");
+but.style.left=slider.size_one_image*2-200+"px";
+
+//
         if (slider.timer_change != 0) {
             slider.interval_changes = setInterval(function () {
                 slider.next();
             }, slider.timer_change);
         }
 
-
-
-        //
-
-        //
     }
+	num_slide(num){
+		var slider=this;
+		slider.current_num_img=num;
+		//var div_1 = document.getElementById(slider.img_3_block_id);
+		 //div_1.innerHTML = "";
+		//setTimeout(()=>{slider.reload();},50);
+		slider.reload();
+		
+	}
     action_slider(a) {
 var slider=this;
         if (!slider.activated_slider) {
@@ -161,14 +201,22 @@ else{
         }
 
     }
+	clear_button(){
+		var but =document.getElementById("test_id");
+		but.innerHTML="";
+		but =document.getElementById("tttt_id");
+		but.innerHTML="";
+	}
     next() {
 		var slider=this;
+		slider.clear_button();
         clearTimeout(slider.interval_changes);
         slider.action_slider(true);
 
     }
     prev() {
 		var slider=this;
+		slider.clear_button();
         clearTimeout(slider.interval_changes);
         slider.action_slider(false);
 
