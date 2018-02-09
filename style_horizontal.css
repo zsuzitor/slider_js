@@ -42,7 +42,8 @@ div.test_block{
 	width:30px;
 	height:30px;
 	background-color:black;
-	margin-left:10px;
+	margin-left:5px;
+	margin-top:5px;
 	 border-radius: 30px;
 	 /*padding-top:5px;
 	 padding-left:5px;*/
@@ -95,6 +96,10 @@ div.hhhhhh1{
 	display:none;
 	width:205px;
 	height:100px;
-	bottom:0;
-	left:0;
+	
+}
+
+div.hhjjj{
+	 transform: rotate(90deg);
+	
 }
