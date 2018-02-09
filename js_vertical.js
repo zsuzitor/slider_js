@@ -6,10 +6,10 @@ function up_slider() {
     //расчитываем ширину экрана
     var height = document.documentElement.clientHeight;
     
-    var block = document.getElementById("block_type_1_id");//блок в котором будет показан текущий слайд
+    //var block = document.getElementById("block_type_1_id");//блок в котором будет показан текущий слайд
     //ширина для слайда
     height = 800;
-    block.style.height = height + 'px';
+    //block.style.height = height + 'px';
     //создаем объект слайдера и запускаем его
     //params :
     //1- количество объектов в списке
@@ -19,8 +19,9 @@ function up_slider() {
     //5- ширина 1 слайда
     //6- интервал смены слайда (1000==1s)
 	//7- тип слайдера true-горизонтальный false-вертикальный
-    slider = new Slider_(count_img_in_list__, "main_slider_3_view_block_id", "main_slider_one_slide_id", 1000, 800, 0,false);
-    slider.reload();
+	
+    slider = new Slider_(count_img_in_list__, "bbbbbbbb", "main_slider_one_slide_id", 1000, 300,height, 0,false,"slider");
+    slider.up();
 }
 
 document.addEventListener("DOMContentLoaded", up_slider);

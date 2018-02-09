@@ -97,7 +97,14 @@ else{
 		str+=slider.height_slide+"px; width:"+slider.width_slide+"px;'";
 		
 		
-		str+="><div id='main_slider_3_view_block_id'></div></div>";
+		str+="><div id='main_slider_3_view_block_id' style='";
+		if(slider.horizontal_bool){
+			str+="height:100%; width:300%;";
+		}
+		else{
+			str+="height:300%; width:100%;";
+		}
+		str+="'></div></div>";
 		main.innerHTML=str;
 		slider.reload();
 	}
