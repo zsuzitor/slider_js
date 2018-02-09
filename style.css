@@ -1,4 +1,4 @@
-
+/*block1----------может изменить остальной код*/
  img {
     width: 100%;
     height: 100%;
@@ -6,33 +6,38 @@
 div.div_display_none{
     display: none;
     position:relative;
-
 }
+/*block1  END*/
+/*block2 ссылку на картинку нужно изменить*/
+div._Slider_prev_butt{
+	cursor:pointer;
+	width:100px;
+	height:100px;
+	 background-image: url(prev_button_left.png);
+    background-size: 100% 100%;
+}
+div._Slider_next_butt{
+	 background-image: url(next_button_right.png);
+    background-size: 100% 100%;
+	cursor:pointer;
+	width:100px;
+	height:100px;
+}
+/*block2  END*/
 div._Slider_div_inline_block {
     display: inline-block;
     vertical-align: top;
 }
-
-
-
 div._Slider_main_block_slider{
      overflow: hidden;
       position:relative;    
 }
-
-
-
 #_Slider_3_view_block_id{
      position:relative;
-    
     top: 0;
-
 }
-/**/
-
 div._Slider_block_change_slide{
 	position:absolute;
-	/*display:none;*/
 	display:none;
 }
 div._Slider_one_button_change{
@@ -47,7 +52,6 @@ div._Slider_one_button_change{
 	border:1px solid white;
 	cursor:pointer;
 }
-
 div._Slider_one_button_change_curr{
 	width:20px;
 	height:20px;
@@ -55,48 +59,22 @@ div._Slider_one_button_change_curr{
 	margin-left:5px;
 	margin-top:5px;
 	 border-radius: 20px;
-	 
-	
 }
 #_Slider_3_view_block_id:hover div._Slider_block_change_slide{
 	display:block;
 }
-
 div._Slider_next_prev_block{
-	
 	border:2px solid black;
-	
 }
 #_Slider_3_view_block_id:hover #_Slider_next_prev_block_id{
 	display:block;
-}
-
-div._Slider_prev_butt{
-	cursor:pointer;
-	width:100px;
-	height:100px;
-	 background-image: url(prev_button_left.png);
-    background-size: 100% 100%;
-}
-
-
-div._Slider_next_butt{
-	 background-image: url(next_button_right.png);
-    background-size: 100% 100%;
-	cursor:pointer;
-	width:100px;
-	height:100px;
-	
 }
 #_Slider_next_prev_block_id{
 	position:absolute;
 	display:none;
 	width:205px;
 	height:100px;
-	
 }
-
 div._Slider_next_prev_block_tr{
 	 transform: rotate(90deg);
-	
 }
