@@ -1,31 +1,28 @@
 
- 
-div.div_inline_block {
-    display: inline-block;
-    vertical-align: top;
-}
-
-
-img {
+ img {
     width: 100%;
     height: 100%;
-}
-div.block_type_1{
-    
-    
-     overflow: hidden;
-      position:relative;
-       
-       
 }
 div.div_display_none{
     display: none;
     position:relative;
 
 }
+div._Slider_div_inline_block {
+    display: inline-block;
+    vertical-align: top;
+}
 
 
-#main_slider_3_view_block_id{
+
+div._Slider_main_block_slider{
+     overflow: hidden;
+      position:relative;    
+}
+
+
+
+#_Slider_3_view_block_id{
      position:relative;
     
     top: 0;
@@ -33,12 +30,12 @@ div.div_display_none{
 }
 /**/
 
-div.test{
+div._Slider_block_change_slide{
 	position:absolute;
 	/*display:none;*/
 	display:none;
 }
-div.test_block{
+div._Slider_one_button_change{
 	width:30px;
 	height:30px;
 	background-color:black;
@@ -51,7 +48,7 @@ div.test_block{
 	cursor:pointer;
 }
 
-div.test_block12{
+div._Slider_one_button_change_curr{
 	width:20px;
 	height:20px;
 	background-color:white;
@@ -61,20 +58,20 @@ div.test_block12{
 	 
 	
 }
-#main_slider_3_view_block_id:hover div.test{
+#_Slider_3_view_block_id:hover div._Slider_block_change_slide{
 	display:block;
 }
 
-div.tttt{
+div._Slider_next_prev_block{
 	
 	border:2px solid black;
 	
 }
-#main_slider_3_view_block_id:hover #tttt_id{
+#_Slider_3_view_block_id:hover #_Slider_next_prev_block_id{
 	display:block;
 }
 
-div.hhhhhh{
+div._Slider_prev_butt{
 	cursor:pointer;
 	width:100px;
 	height:100px;
@@ -83,7 +80,7 @@ div.hhhhhh{
 }
 
 
-div.hhhhhh1{
+div._Slider_next_butt{
 	 background-image: url(next_button_right.png);
     background-size: 100% 100%;
 	cursor:pointer;
@@ -91,7 +88,7 @@ div.hhhhhh1{
 	height:100px;
 	
 }
-#tttt_id{
+#_Slider_next_prev_block_id{
 	position:absolute;
 	display:none;
 	width:205px;
@@ -99,7 +96,7 @@ div.hhhhhh1{
 	
 }
 
-div.hhjjj{
+div._Slider_next_prev_block_tr{
 	 transform: rotate(90deg);
 	
 }

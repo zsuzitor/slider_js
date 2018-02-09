@@ -30,7 +30,7 @@ class Slider_ {
 
     load_sl() {
 		var slider=this;
-        var div_ = document.getElementById("main_slider_3_view_block_id");
+        var div_ = document.getElementById("_Slider_3_view_block_id");
         if (slider.current_num_img < 0) {
             slider.current_num_img = +slider.count_img_in_list + +slider.current_num_img;
         }
@@ -38,7 +38,7 @@ class Slider_ {
         //alert(part_id_one_img + (current_num_img - 1));
         if (img != null) {
 if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -48,7 +48,7 @@ else{
             //с конца
             img = document.getElementById(slider.part_id_one_img + (slider.count_img_in_list - 1));
            if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -56,7 +56,7 @@ else{
         img = document.getElementById(slider.part_id_one_img + slider.current_num_img);
         if (img != null) {
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -65,7 +65,7 @@ else{
             slider.current_num_img = 0;
             img = document.getElementById(slider.part_id_one_img + slider.current_num_img);
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -73,7 +73,7 @@ else{
         img = document.getElementById(slider.part_id_one_img + (slider.current_num_img + 1));
         if (img != null) {
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -81,7 +81,7 @@ else{
         else {
             img = document.getElementById(slider.part_id_one_img + 0);
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='_Slider_div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
 	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
@@ -93,11 +93,11 @@ else{
 		var slider=this;
 		var main= document.getElementById(slider.id_main_block);
 		var str="";
-		str=" <div id='block_type_1_id' class='block_type_1 div_inline_block' style='height:";
+		str=" <div id='_Slider_main_block_slider_id' class='_Slider_main_block_slider _Slider_div_inline_block' style='height:";
 		str+=slider.height_slide+"px; width:"+slider.width_slide+"px;'";
 		
 		
-		str+="><div id='main_slider_3_view_block_id' style='";
+		str+="><div id='_Slider_3_view_block_id' style='";
 		if(slider.horizontal_bool){
 			str+="height:100%; width:300%;";
 		}
@@ -110,7 +110,7 @@ else{
 	}
     reload() {
 		var slider=this;
-        var div_ = document.getElementById("main_slider_3_view_block_id");
+        var div_ = document.getElementById("_Slider_3_view_block_id");
 		if(slider.horizontal_bool){
 			slider.bias = -slider.width_slide;
 		}
@@ -131,18 +131,18 @@ else{
         slider.activated_slider = false;
 
 		//добавление кнопок перехода
-var str="<div id='test_id' class='test'>"
+var str="<div id='_Slider_block_change_slide_id' class='_Slider_block_change_slide'>"
 for(var i=0;i<slider.count_img_in_list;++i){
 	//
-	var tmp="<div  class='test_block"
+	var tmp="<div  class='_Slider_one_button_change"
 	if(slider.horizontal_bool){
-			tmp+=" div_inline_block";
+			tmp+=" _Slider_div_inline_block";
 		}
 		tmp+="' onclick='"+slider.object_name+".num_slide";
 	tmp+="("+i+")'";
 	tmp+=">";
 	if(i==slider.current_num_img){
-	tmp+="<div class='test_block12'></div>";	
+	tmp+="<div class='_Slider_one_button_change_curr'></div>";	
 	}
 	tmp+="</div>";
 	str+=tmp;
@@ -150,7 +150,7 @@ for(var i=0;i<slider.count_img_in_list;++i){
 str+="</div>";
 
 div_.innerHTML+=str;
-var but =document.getElementById("test_id");
+var but =document.getElementById("_Slider_block_change_slide_id");
 if(slider.horizontal_bool){
 	but.style.top='0px';
 but.style.left=slider.width_slide+20 +'px';
@@ -161,24 +161,24 @@ but.style.left=20 +'px';
 }
 
 //добавление кнопок перехода: влево вправо
-str="<div id='tttt_id'";
+str="<div id='_Slider_next_prev_block_id'";
 if(!slider.horizontal_bool){
-	str+=" class='hhjjj'";
+	str+=" class='_Slider_next_prev_block_tr'";
 }
 
 
 str+=">";
-str+="<div class='tttt'>";
-str+="<div class='hhhhhh div_inline_block' onclick='"+slider.object_name+".prev()'></div>";
+str+="<div class='_Slider_next_prev_block'>";
+str+="<div class='_Slider_prev_butt _Slider_div_inline_block' onclick='"+slider.object_name+".prev()'></div>";
 
-str+="<div class='hhhhhh1 div_inline_block' onclick='"+slider.object_name+".next()'></div>";
+str+="<div class='_Slider_next_butt _Slider_div_inline_block' onclick='"+slider.object_name+".next()'></div>";
 
 //str+=">";
 
 str+="</div></div>";
 
 div_.innerHTML+=str;
-but =document.getElementById("tttt_id");
+but =document.getElementById("_Slider_next_prev_block_id");
 if(slider.horizontal_bool){
 	but.style.left=slider.width_slide*2-200+"px";
 	but.style.top=slider.height_slide-100+"px";
@@ -209,7 +209,7 @@ else{
     action_slider(a) {
 var slider=this;
         if (!slider.activated_slider) {
-            var element = document.getElementById("main_slider_3_view_block_id");
+            var element = document.getElementById("_Slider_3_view_block_id");
             slider.activated_slider = true;
             slider.start = Date.now();
 
@@ -269,9 +269,9 @@ else{
 
     }
 	clear_button(){
-		var but =document.getElementById("test_id");
+		var but =document.getElementById("_Slider_block_change_slide_id");
 		but.innerHTML="";
-		but =document.getElementById("tttt_id");
+		but =document.getElementById("_Slider_next_prev_block_id");
 		but.innerHTML="";
 	}
     next() {
@@ -289,3 +289,5 @@ else{
 
     }
 }
+//block_type_1 div_inline_block  _Slider_main_block_slider main_slider_3_view_block_id test test_block test_block12 tttt_id hhhhhh
+////////////////////////////////////////////////////////////////////////////////////
