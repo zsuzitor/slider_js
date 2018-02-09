@@ -1,11 +1,15 @@
 class Slider_ {
 
-    constructor(count_img_in_list_, img_3_block_id_, part_id_one_img_, speed_load_, size_one_image_, timer_change_,horizontal_bool_,object_name_) {
+    constructor(count_img_in_list_, id_main_block_, part_id_one_img_, speed_load_, width_slide_,height_slide_, timer_change_,horizontal_bool_,object_name_) {
         this.count_img_in_list = count_img_in_list_;
-        this.img_3_block_id = img_3_block_id_;
+        this.id_main_block = id_main_block_;
         this.part_id_one_img = part_id_one_img_;
         this.speed_load = speed_load_;
-        this.size_one_image = size_one_image_;
+		this.width_slide=width_slide_;
+		this.height_slide=height_slide_;
+        //this.size_one_image = size_one_image_;
+		
+		
         this.horizontal_bool=horizontal_bool_;
 		this.object_name=object_name_;
 		
@@ -26,7 +30,7 @@ class Slider_ {
 
     load_sl() {
 		var slider=this;
-        var div_ = document.getElementById(slider.img_3_block_id);
+        var div_ = document.getElementById("main_slider_3_view_block_id");
         if (slider.current_num_img < 0) {
             slider.current_num_img = +slider.count_img_in_list + +slider.current_num_img;
         }
@@ -34,61 +38,79 @@ class Slider_ {
         //alert(part_id_one_img + (current_num_img - 1));
         if (img != null) {
 if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
              }
         else {
             //с конца
             img = document.getElementById(slider.part_id_one_img + (slider.count_img_in_list - 1));
            if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }}
         img = document.getElementById(slider.part_id_one_img + slider.current_num_img);
         if (img != null) {
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }}
         else {
             slider.current_num_img = 0;
             img = document.getElementById(slider.part_id_one_img + slider.current_num_img);
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }}
         img = document.getElementById(slider.part_id_one_img + (slider.current_num_img + 1));
         if (img != null) {
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }}
         else {
             img = document.getElementById(slider.part_id_one_img + 0);
             if(slider.horizontal_bool){
-	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div class='div_inline_block' style='width:"+slider.width_slide+"px;'"+">" + img.innerHTML + "</div>"
 }
 else{
-	 div_.innerHTML += "<div style='height:"+slider.size_one_image+"px;'"+">" + img.innerHTML + "</div>"
+	 div_.innerHTML += "<div style='height:"+slider.height_slide+"px;'"+">" + img.innerHTML + "</div>"
 }}
 
         
     }
+	up(){
+		var slider=this;
+		var main= document.getElementById(slider.id_main_block);
+		var str="";
+		str=" <div id='block_type_1_id' class='block_type_1 div_inline_block' style='height:";
+		str+=slider.height_slide+"px; width:"+slider.width_slide+"px;'";
+		
+		
+		str+="><div id='main_slider_3_view_block_id'></div></div>";
+		main.innerHTML=str;
+		slider.reload();
+	}
     reload() {
 		var slider=this;
-        var div_ = document.getElementById(slider.img_3_block_id);
-        slider.bias = -slider.size_one_image;
+        var div_ = document.getElementById("main_slider_3_view_block_id");
+		if(slider.horizontal_bool){
+			slider.bias = -slider.width_slide;
+		}
+		else{
+			slider.bias = -slider.height_slide;
+		}
+        
 		
 if(slider.horizontal_bool){
 	div_.style.left = slider.bias + 'px';
@@ -120,7 +142,7 @@ str+="</div>";
 div_.innerHTML+=str;
 var but =document.getElementById("test_id");
 but.style.top='0px';
-but.style.left=slider.size_one_image+20 +'px';
+but.style.left=slider.width_slide+20 +'px';
 //добавление кнопок перехода: влево вправо
 str="<div id='tttt_id'>";
 str+="<div class='tttt'>";
@@ -134,7 +156,7 @@ str+="</div></div>";
 
 div_.innerHTML+=str;
 but =document.getElementById("tttt_id");
-but.style.left=slider.size_one_image*2-200+"px";
+but.style.left=slider.width_slide*2-200+"px";
 
 //
         if (slider.timer_change != 0) {
@@ -156,7 +178,7 @@ but.style.left=slider.size_one_image*2-200+"px";
     action_slider(a) {
 var slider=this;
         if (!slider.activated_slider) {
-            var element = document.getElementById(slider.img_3_block_id);
+            var element = document.getElementById("main_slider_3_view_block_id");
             slider.activated_slider = true;
             slider.start = Date.now();
 
@@ -179,12 +201,26 @@ var slider=this;
 
 
                 if (a) {
-
-                    slider.bias -= ((slider.size_one_image * 20) / slider.speed_load);
+if(slider.horizontal_bool){
+	 slider.bias -= ((slider.width_slide * 20) / slider.speed_load);
+			
+		}
+		else{
+			slider.bias -= ((slider.height_slide * 20) / slider.speed_load);
+		}
+                   
 
                 }
                 else {
-                    slider.bias += ((slider.size_one_image * 20) / slider.speed_load);
+					
+					if(slider.horizontal_bool){
+	 slider.bias += ((slider.width_slide * 20) / slider.speed_load);
+			
+		}
+		else{
+			 slider.bias += ((slider.height_slide * 20) / slider.speed_load);
+		}
+                   
                 }
 				
 if(slider.horizontal_bool){

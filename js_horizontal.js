@@ -8,10 +8,10 @@ function up_slider() {
     if (width < 960) {
         width = 960;
     }
-    var block = document.getElementById("block_type_1_id");//блок в котором будет показан текущий слайд
+    //var block = document.getElementById("block_type_1_id");//блок в котором будет показан текущий слайд
     //ширина для слайда
     width = width * 0.8 - width * 0.8 * 0.2;
-    block.style.width = width + 'px';
+    //block.style.width = width + 'px';
     //создаем объект слайдера и запускаем его
     //params :
     //1- количество объектов в списке
@@ -21,8 +21,8 @@ function up_slider() {
     //5- ширина 1 слайда
     //6- интервал смены слайда (1000==1s)
 	//7- тип слайдера true-горизонтальный false-вертикальный
-    slider = new Slider_(count_img_in_list__, "main_slider_3_view_block_id", "main_slider_one_slide_id", 1000, width, 0,true,"slider");
-    slider.reload();
+    slider = new Slider_(count_img_in_list__, "bbbbbbbb", "main_slider_one_slide_id", 1000, width,300, 0,true,"slider");
+    slider.up();
 }
 
 document.addEventListener("DOMContentLoaded", up_slider);
