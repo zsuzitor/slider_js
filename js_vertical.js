@@ -16,7 +16,7 @@ function up_slider() {
     //7- интервал смены слайда (1000==1s)
 	//8- тип слайдера true-горизонтальный false-вертикальный
 	//9- имя объекта который создается (var slider=new Slider_();)
-    slider = new Slider_(count_img_in_list_, "bbbbbbbb", "main_slider_one_slide_id", 1000, 300,800, 0,false,"slider");
+    slider = new Slider_(count_img_in_list_, "bbbbbbbb", "main_slider_one_slide_id", 1000, 300,800, 5000,false,"slider");
     slider.up();
 }
 

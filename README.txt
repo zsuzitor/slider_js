@@ -7,3 +7,8 @@ style.css------ необходимые стили
 horizontal.html----- html разметка для горизонтального слайдера
 vertical.html----- html разметка для вертикального слайдера
 
+если bootstrap делает круги кривые
+
+div._Slider_one_button_change{
+-webkit-box-sizing:content-box;
+}
