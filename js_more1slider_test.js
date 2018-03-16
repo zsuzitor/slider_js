@@ -1,0 +1,34 @@
+var slider;
+var slider2;
+
+function up_slider() {
+//из hidden берем количество объектов в списке
+    var count_img_in_list_ = 7;//document.getElementById("count_id_slider_main_index").value;
+    //расчитываем ширину экрана
+    var width = document.documentElement.clientWidth;
+    if (width < 960) {
+        width = 960;
+    }
+    
+    //ширина для слайда
+    width = width * 0.8 - width * 0.8 * 0.2;
+    
+    //создаем объект слайдера и запускаем его
+    //params :
+    //1- количество объектов в списке
+    //2- id блока в котором будет расположен слайдер
+    //3- часть id блока с очередным слайдом (id формируется: main_slider_one_slide_id0,main_slider_one_slide_id1 .....)
+    //4- скорость прокрутки
+    //5- ширина 1 слайда
+	//6- высота 1 слайда
+    //7- интервал смены слайда (1000==1s)
+	//8- тип слайдера true-горизонтальный false-вертикальный
+	//9- имя объекта который создается (var slider=new Slider_();)
+    slider = new Slider_(count_img_in_list_, "bbbbbbbb", "main_slider_one_slide_id", 1000, width,300, 5000,true,"slider");
+    slider.up();
+	
+	slider2 = new Slider_(count_img_in_list_, "bbbbbbbb1", "main_slider_one_slide_id", 1000, width,300, 5000,true,"slider2");
+    slider2.up();
+}
+
+document.addEventListener("DOMContentLoaded", up_slider);

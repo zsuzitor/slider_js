@@ -18,6 +18,14 @@ class Slider_ {
         this.start;//таймер для анимаци
         this.timer;//таймер для анимаци
 		this.animation=false;//разрешение пользователем анимации
+		
+		if(Slider_.count_sliders==undefined){
+			Slider_.count_sliders=0;
+		}
+	else{
+		++Slider_.count_sliders;
+	}
+	this.num_slider=Slider_.count_sliders;//номер слайдера
     }
 
     //-----
@@ -37,7 +45,7 @@ class Slider_ {
         }
 
         var slider = this;
-        var div_ = document.getElementById("_Slider_3_view_block_id");
+        var div_ = document.getElementById("_Slider_3_view_block_id"+slider.num_slider);
         if (slider.current_num_img < 0) {
             slider.current_num_img = +slider.count_img_in_list + +slider.current_num_img;
         }
@@ -77,7 +85,7 @@ class Slider_ {
         var str = "";
         str = " <div id='_Slider_main_block_slider_id' class='_Slider_main_block_slider _Slider_div_inline_block' style='height:";
         str += slider.height_slide + "px; width:" + slider.width_slide + "px;'";
-        str += "><div id='_Slider_3_view_block_id' style='";
+        str += "><div id='_Slider_3_view_block_id"+slider.num_slider+"' style='";
         if (slider.horizontal_bool) {
             str += "height:100%; width:300%;";
         }
@@ -95,7 +103,7 @@ class Slider_ {
 //обновить слайды+ добавить кнопки и тд
     reload() {
         var slider = this;
-        var div_ = document.getElementById("_Slider_3_view_block_id");
+        var div_ = document.getElementById("_Slider_3_view_block_id"+slider.num_slider);
         if (slider.horizontal_bool) {
             slider.bias = -slider.width_slide;
         }
@@ -113,9 +121,9 @@ class Slider_ {
         slider.activated_slider = false;
 
         //добавление кнопок перехода
-        var str = "<div id='_Slider_block_change_slide_id' class='_Slider_block_change_slide'>"
+        var str = "<div id='_Slider_block_change_slide_id"+slider.num_slider+"' class='_Slider_block_change_slide'>"
 		if(slider.timer_change!=0){
-			str+="<div id='_Slider_cont_timer_id' onclick='" + slider.object_name + ".pause_slider()"
+			str+="<div id='_Slider_cont_timer_id"+slider.num_slider+"' onclick='" + slider.object_name + ".pause_slider()"
 			str+="' class='_Slider_cont_timer";
 			if (slider.horizontal_bool) {
                 str += " _Slider_div_inline_block";
@@ -145,7 +153,7 @@ class Slider_ {
         }
         str += "</div>";
         div_.innerHTML += str;
-        var but = document.getElementById("_Slider_block_change_slide_id");
+        var but = document.getElementById("_Slider_block_change_slide_id"+slider.num_slider);
         if (slider.horizontal_bool) {
             but.style.top = '0px';
             but.style.left = slider.width_slide + 20 + 'px';
@@ -156,7 +164,7 @@ class Slider_ {
         }
 
         //добавление кнопок перехода: влево вправо
-        str = "<div id='_Slider_next_prev_block_id'";
+        str = "<div id='_Slider_next_prev_block_id"+slider.num_slider+"'";
         if (!slider.horizontal_bool) {
             str += " class='_Slider_next_prev_block_tr'";
         }
@@ -166,7 +174,7 @@ class Slider_ {
         str += "<div class='_Slider_next_butt _Slider_div_inline_block' onclick='" + slider.object_name + ".next()'></div>";
         str += "</div></div>";
         div_.innerHTML += str;
-        but = document.getElementById("_Slider_next_prev_block_id");
+        but = document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);
         if (slider.horizontal_bool) {
             but.style.left = slider.width_slide * 2 - 200 + "px";
             but.style.top = slider.height_slide - 100 + "px";
@@ -192,7 +200,7 @@ class Slider_ {
 	pause_slider() {
 		var slider = this;
 		slider.animation=!slider.animation;
-		var block=document.getElementById('_Slider_cont_timer_id');
+		var block=document.getElementById('_Slider_cont_timer_id'+slider.num_slider);
 		var str="";
 		if(slider.animation){
 			str+="<div class='_Slider_cont_timer_true'></div>";
@@ -210,7 +218,7 @@ class Slider_ {
     action_slider(a) {
         var slider = this;
         if (!slider.activated_slider) {
-            var element = document.getElementById("_Slider_3_view_block_id");
+            var element = document.getElementById("_Slider_3_view_block_id"+slider.num_slider);
             slider.activated_slider = true;
             slider.start = Date.now();
             slider.timer = setInterval(function () {
@@ -254,9 +262,9 @@ class Slider_ {
     }
 
     clear_button() {
-        var but = document.getElementById("_Slider_block_change_slide_id");
+        var but = document.getElementById("_Slider_block_change_slide_id"+slider.num_slider);
         but.innerHTML = "";
-        but = document.getElementById("_Slider_next_prev_block_id");
+        but = document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);
         but.innerHTML = "";
     }
 

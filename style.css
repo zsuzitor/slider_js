@@ -32,7 +32,8 @@ div._Slider_main_block_slider{
      overflow: hidden;
       position:relative;    
 }
-#_Slider_3_view_block_id{
+
+div[id^="_Slider_3_view_block_id"]{
      position:relative;
     top: 0;
 }
@@ -60,16 +61,18 @@ div._Slider_one_button_change_curr{
 	margin-top:5px;
 	 border-radius: 20px;
 }
-#_Slider_3_view_block_id:hover div._Slider_block_change_slide{
+
+div[id^="_Slider_3_view_block_id"]:hover div._Slider_block_change_slide{
 	display:block;
 }
 div._Slider_next_prev_block{
 	border:2px solid black;
 }
-#_Slider_3_view_block_id:hover #_Slider_next_prev_block_id{
+div[id^="_Slider_3_view_block_id"]:hover [id^="_Slider_next_prev_block_id"]{
 	display:block;
 }
-#_Slider_next_prev_block_id{
+
+div[id^="_Slider_next_prev_block_id"]{
 	position:absolute;
 	display:none;
 	width:205px;
