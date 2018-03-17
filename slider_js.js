@@ -77,13 +77,27 @@ class Slider_ {
              div_.innerHTML += fff();
         }
     }
-
+    hover(){
+        var slider = this;
+        var bl=document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);
+        bl.style.display='block';
+        var but= document.getElementById("_Slider_block_change_slide_id"+slider.num_slider);
+        but.style.display='block';
+        
+    }
+    not_hover(){
+var slider = this;
+        var bl=document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);
+        bl.style.display='none';
+        var but= document.getElementById("_Slider_block_change_slide_id"+slider.num_slider);
+        but.style.display='none';
+    }
 	//старт слайдера
     up() {
         var slider = this;
         var main = document.getElementById(slider.id_main_block);
         var str = "";
-        str = " <div id='_Slider_main_block_slider_id' class='_Slider_main_block_slider _Slider_div_inline_block' style='height:";
+        str = " <div id='_Slider_main_block_slider_id"+slider.num_slider+"' class='_Slider_main_block_slider _Slider_div_inline_block' style='height:";
         str += slider.height_slide + "px; width:" + slider.width_slide + "px;'";
         str += "><div id='_Slider_3_view_block_id"+slider.num_slider+"' style='";
         if (slider.horizontal_bool) {
@@ -92,7 +106,7 @@ class Slider_ {
         else {
             str += "height:300%; width:100%;";
         }
-        str += "'></div></div>";
+        str += "' onmouseover='"+slider.object_name+".hover()' onmouseout='"+slider.object_name+".not_hover()'></div></div>";
         main.innerHTML = str;
 		
 		if(slider.timer_change!=0){
@@ -104,6 +118,8 @@ class Slider_ {
     reload() {
         var slider = this;
         var div_ = document.getElementById("_Slider_3_view_block_id"+slider.num_slider);
+        
+        
         if (slider.horizontal_bool) {
             slider.bias = -slider.width_slide;
         }
@@ -262,6 +278,7 @@ class Slider_ {
     }
 
     clear_button() {
+         var slider = this;
         var but = document.getElementById("_Slider_block_change_slide_id"+slider.num_slider);
         but.innerHTML = "";
         but = document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);

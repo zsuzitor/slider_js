@@ -24,10 +24,10 @@ function up_slider() {
     //7- интервал смены слайда (1000==1s)
 	//8- тип слайдера true-горизонтальный false-вертикальный
 	//9- имя объекта который создается (var slider=new Slider_();)
-    slider = new Slider_(count_img_in_list_, "bbbbbbbb", "main_slider_one_slide_id", 1000, width,300, 5000,true,"slider");
+    slider = new Slider_(count_img_in_list_, "bbbbbbbb", "main_slider_one_slide_id", 1000, width,300, 0,true,"slider");
     slider.up();
 	
-	slider2 = new Slider_(count_img_in_list_, "bbbbbbbb1", "main_slider_one_slide_id", 1000, width,300, 5000,true,"slider2");
+	slider2 = new Slider_(count_img_in_list_, "bbbbbbbb1", "main_slider_one_slide_id", 1000, width,300, 0,true,"slider2");
     slider2.up();
 }
 
