@@ -36,10 +36,10 @@ class Slider_ {
             var res = "";
             let ttt = "'width:" + slider.width_slide + "px; " + "height:" + slider.height_slide + "px;'>";
             if (slider.horizontal_bool) {
-                res= "<div class='_Slider_div_inline_block' style=" + ttt + img.innerHTML + "</div>"
+                res= "<div class='_Slider_div_inline_block' style=" + ttt + img.innerHTML + "</div>";
             }
             else {
-                res = "<div style=" + ttt + img.innerHTML + "</div>"
+                res = "<div style=" + ttt + img.innerHTML + "</div>";
             }
             return res;
         }
@@ -137,9 +137,9 @@ var slider = this;
         slider.activated_slider = false;
 
         //добавление кнопок перехода
-        var str = "<div id='_Slider_block_change_slide_id"+slider.num_slider+"' class='_Slider_block_change_slide'>"
+        var str = "<div id='_Slider_block_change_slide_id"+slider.num_slider+"' class='_Slider_block_change_slide'>";
 		if(slider.timer_change!=0){
-			str+="<div id='_Slider_cont_timer_id"+slider.num_slider+"' onclick='" + slider.object_name + ".pause_slider()"
+			str+="<div id='_Slider_cont_timer_id"+slider.num_slider+"' onclick='" + slider.object_name + ".pause_slider()";
 			str+="' class='_Slider_cont_timer";
 			if (slider.horizontal_bool) {
                 str += " _Slider_div_inline_block";
@@ -154,7 +154,7 @@ var slider = this;
 			str+="</div>";
 		}
         for (var i = 0; i < slider.count_img_in_list; ++i) {
-            let tmp = "<div  class='_Slider_one_button_change"
+            let tmp = "<div  class='_Slider_one_button_change";
             if (slider.horizontal_bool) {
                 tmp += " _Slider_div_inline_block";
             }
@@ -186,8 +186,10 @@ var slider = this;
         }
         str += ">";
         str += "<div class='_Slider_next_prev_block'>";
-        str += "<div class='_Slider_prev_butt _Slider_div_inline_block' onclick='" + slider.object_name + ".prev()'></div>";
-        str += "<div class='_Slider_next_butt _Slider_div_inline_block' onclick='" + slider.object_name + ".next()'></div>";
+        str += "<div class='_Slider_div_inline_block _Slider_prev_butt_'  onclick='" + slider.object_name + 
+        ".prev()'><div class='_Slider_prev_butt'></div></div><div class='_Slider_separator_div_prev_next_but _Slider_div_inline_block'></div>";
+        
+        str += "<div class='_Slider_next_butt_ _Slider_div_inline_block'  onclick='" + slider.object_name + ".next()'><div class='_Slider_next_butt'></div></div>";
         str += "</div></div>";
         div_.innerHTML += str;
         but = document.getElementById("_Slider_next_prev_block_id"+slider.num_slider);
